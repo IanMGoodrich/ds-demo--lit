@@ -1,0 +1,26 @@
+
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('../assets/fonts/Manrope-Variable.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Melodrama';
+  src: url('../assets/fonts/Melodrama-Variable.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Nippo';
+  src: url('../assets/fonts/Nippo-Variable.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Teko';
+  src: url('../assets/fonts/Teko-Variable.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
