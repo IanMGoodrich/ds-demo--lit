@@ -24,3 +24,39 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: 'Bespoke-Serif';
+  src: url('../assets/fonts/BespokeSerif-Variable.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bespoke-Serif-It';
+  src: url('../assets/fonts/BespokeSerif-VariableItalic.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bespoke-Sans';
+  src: url('../assets/fonts/BespokeSans-Variable.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bespoke-Sans-It';
+  src: url('../assets/fonts/BespokeSans-VariableItalic.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../assets/fonts/Satoshi-Variable.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Satoshi-It';
+  src: url('../assets/fonts/Satoshi-VariableItalic.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
