@@ -22,6 +22,12 @@ export class BasicCard extends LitElement {
   @queryAssignedElements({slot: 'cta', flatten: true})
   ctaRef: Array<HTMLElement>;
 
+  /**
+   * Ref to heading slot
+   */
+  @queryAssignedElements({slot: 'heading', flatten: true})
+  headingRef: Array<HTMLElement>;
+
   @property({type: String})
   theme: Theme = 'default';
 
@@ -69,6 +75,8 @@ export class BasicCard extends LitElement {
       const linkText = this.ctaRef[0].innerHTML;
       if (linkText === '') {
         this.silentLink = true;
+        const titleText = this.headingRef[0].innerHTML;
+        this.ctaRef[0].setAttribute('aria-label', titleText);
       }      
     }
   }
