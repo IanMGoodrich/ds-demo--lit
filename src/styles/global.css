@@ -5,6 +5,12 @@
   --ff-manrope: 'Manrope';
   --ff-nippo: 'Nippo';
   --ff-teko: 'Teko';
+  --ff-satoshi: 'Satoshi';
+  --ff-satoshi-it: 'Satoshi-It';
+  --ff-bespoke-sans: 'Bespoke-Sans';
+  --ff-bespoke-sans-it: 'Bespoke-Sans-It';
+  --ff-bespoke-serif: 'Bespoke-Serif';
+  --ff-bespoke-serif-it: 'Bespoke-Serif-It';
 
   /* Font Sizes: Clamped to 640px - 1440px */
 
@@ -28,14 +34,54 @@
   --fs-heading-1: clamp(2.75rem, 1.65rem + 2.75vw, 4.125rem);
 
 
-  /* Colors */
+  /* General Colors */
   --cl-orange-hot: #db4223;
   --cl-charcoal-darkest: #141414;
   --cl-lavender-lightest: #fbfaff;
   --cl-chartreuse-lightest: #ccffde;
+  --cl-lemon-lightest: #c2c2bc;
+  --cl-display-dull: #bab08d;
+  --cl-white: #ffff;
+  --cl-green-dark: #017803;
+  --cl-powder-blue: #4287f5;
   --cl-text-default-dark: var(--cl-charcoal-darkest);
   --cl-text-default-light: var(--cl-lavender-lightest);
 
   /* Padding */
   --padding-1-175: clamp(1rem, 0.4rem + 1.5vw, 1.75rem);
+
+
+  /* Theme Specific */
+    /* Default */
+    --action-color-primary-default: var(--cl-powder-blue);
+    --action-color-secondary-default: var(--cl-charcoal-darkest);
+    --action-duration-primary-default: 0.4s;
+    --heading-font-default: var(--ff-bespoke-serif);
+    --heading-color-default: var(--cl-text-default-dark);
+    --body-font-default: var(--ff-bespoke-sans);
+    --body-color-default: var(--cl-text-default-dark);
+    --background-color-primary-default: var(--cl-white);
+    --border-color-default: var(--cl-charcoal-darkest);
+    
+    /* Sprawl */
+    --action-color-primary-sprawl: var(--cl-display-dull);
+    --action-color-secondary-sprawl: var(--cl-lemon-lightest);
+    --action-duration-primary-sprawl: 0.2s;
+    --heading-font-sprawl: var(--ff-nippo);
+    --heading-color-sprawl: var(--cl-display-dull);
+    --body-font-sprawl: var(--ff-teko);
+    --body-color-sprawl: var(--cl-display-dull);
+    --background-color-primary-sprawl: var(--cl-charcoal-darkest);
+    --border-color-sprawl: var(--cl-lemon-lightest);
+
+    /* Floral */
+    --action-color-primary-floral: var(--cl-orange-hot);
+    --action-color-secondary-floral: var(--cl-charcoal-darkest);
+    --action-duration-primary-floral: 0.7s;
+    --heading-font-floral: var(--ff-melodrama);
+    --heading-color-floral: var(--cl-orange-hot);
+    --body-font-floral: var(--ff-manrope);
+    --body-color-floral: var(--cl-text-default-dark);
+    --background-color-primary-floral: var(--cl-chartreuse-lightest);
+    --border-color-floral: var(--cl-orange-hot);
 }
