@@ -1,10 +1,10 @@
 import { LitElement, html } from "lit";
 import { customElement, property, queryAssignedElements } from "lit/decorators.js"
-import { cardStyles } from "./basic-card-styles";
+import { cardStyles } from "./img-basic-card-styles";
 import { Theme } from "src/utilities/types";
 
 /**
- * basic-card component
+ * img-basic-card component
  * @slot - heading:
  * @slot - image:
  * @slot - eyebrow:
@@ -12,8 +12,8 @@ import { Theme } from "src/utilities/types";
  * @slot - cta:
  */
 
-@customElement("basic-card")
-export class BasicCard extends LitElement {
+@customElement("img-basic-card")
+export class ImgBasicCard extends LitElement {
   static styles = cardStyles;
 
   /**
@@ -44,7 +44,7 @@ export class BasicCard extends LitElement {
   render() {
     return html`
       <section class="img-basic-card">
-        <div class="basic-card--top-content">
+        <div class="img-basic-card--top-content">
           <div class="eyebrow-wrapper">
             <slot name="eyebrow"></slot>
           </div>
@@ -55,7 +55,7 @@ export class BasicCard extends LitElement {
             <slot name="image"></slot>
           </div>
         </div>
-        <div class="basic-card--main-content">
+        <div class="img-basic-card--main-content">
           <div class="description-wrapper">
             <slot name="description"></slot>
           </div>
@@ -84,6 +84,6 @@ export class BasicCard extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    "basic-card": BasicCard;
+    "img-basic-card": ImgBasicCard;
   }
 }
