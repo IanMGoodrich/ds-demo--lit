@@ -75,7 +75,7 @@ export const cardStyles = css`
   --action-color-secondary: var(--action-color-secondary-default);
 }
 
-.img-img-basic-card {
+.img-basic-card {
   display: flex;
   flex-direction: column;
   max-width: 450px;
