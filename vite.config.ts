@@ -19,6 +19,7 @@ export default defineConfig({
     target: 'esnext',
     outDir: 'dist',
     emptyOutDir: true,
+    cssCodeSplit: true,
   },
 
   server: {
