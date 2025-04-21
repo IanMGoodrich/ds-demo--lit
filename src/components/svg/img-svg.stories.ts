@@ -1,7 +1,5 @@
 import { html } from 'lit';
 import './img-svg';
-import { sharedThemes } from '../../utilities/types';
-import { ifDefined } from 'lit/directives/if-defined.js';
 import svgs from '../../assets/vectors';
 
 export default {
