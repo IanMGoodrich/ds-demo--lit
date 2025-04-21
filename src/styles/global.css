@@ -1,5 +1,5 @@
 @import url('./fonts-families.css');
-
+@import url('../components/footer/img-footer-global-styles.css');
 :root {
   --ff-melodrama: 'Melodrama';
   --ff-manrope: 'Manrope';
@@ -86,5 +86,7 @@
     --body-color-floral: var(--cl-text-default-dark);
     --background-color-primary-floral: var(--cl-chartreuse-lightest);
     --border-color-floral: var(--cl-orange-hot);
-    --svg-color-floral: var(--cl-text-default-dark);
+    --svg-color-floral: var(--cl-orange-hot);
+
+
 }

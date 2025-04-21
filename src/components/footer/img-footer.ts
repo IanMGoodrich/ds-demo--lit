@@ -1,0 +1,32 @@
+import { LitElement, html } from "lit";
+import { customElement } from "lit/decorators.js"
+import { footerStyles } from "./img-footer-styles";
+
+
+@customElement("img-footer")
+export class ImgFooter extends LitElement {
+  static styles = footerStyles;
+
+  render() {
+    return html`
+      <section class="img-footer">
+        <div class="img-footer-wrapper">
+          <div class="img-footer--top-content">
+            <div class="img-footer--logo-wrapper">
+              <slot name="logo"></slot>
+            </div>
+            <div class="img-footer--top-nav-wrapper">
+              <slot name="top-nav"></slot>
+            </div>
+          </div>
+        </div>
+      </section>
+    `;
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "img-footer": ImgFooter;
+  }
+}

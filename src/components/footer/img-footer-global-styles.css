@@ -1,0 +1,20 @@
+img-footer {
+  nav {
+    all: unset;
+  }
+  ul {
+    all: unset;
+    display: flex;
+    border: pink solid 2px;
+  }
+  li {
+    all: unset;
+    display: flex;
+    border: blue solid 2px;
+  }
+  a {
+    all: unset;
+    display: flex;
+    border: orange solid 2px;
+  }
+}
