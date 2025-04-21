@@ -43,4 +43,64 @@ export default {
 </g>
 </svg>
 `,
+'sprawl_logo':`
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024.000000 1024.000000">
+  <g transform="translate(0.000000,1024.000000) scale(0.100000,-0.100000)" fill="currentColor" stroke="none">
+    <path d="M4915 8595 c-11 -12 -806 -809 -1767 -1771 l-1748 -1749 1188 -1188 1187 -1187 -1 648 0 647 -550 547 -549 547 734 728 c404 400 738 730 742 731 5 2 9 -934 9 -2115 l0 -2118 390 -390 390 -390 0 3543 c0 1948 -1 3542 -2 3541 -2 -1 -12 -11 -23 -24z" fill="currentColor"/>
+    <path d="M5670 6532 l0 -808 467 -467 467 -468 -467 -467 -467 -467 2 -801 3 -801 1295 1288 1295 1288 -480 481 -480 480 -422 0 -423 0 0 355 0 355 607 0 608 0 420 420 421 420 -1423 0 -1423 0 0 -808z" fill="currentColor"/>
+  </g>
+</svg>
+`,
+'floral_logo':
+`<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+  <g>
+    <g stroke-width="0.8">
+      <path d="M100 20 L100 40" fill="currentColor"/>
+      <path d="M130 25 L122 44" fill="currentColor"/>
+      <path d="M155 45 L138 60" fill="currentColor"/>
+      <path d="M170 75 L150 82" fill="currentColor"/>
+      <path d="M180 100 L160 100" fill="currentColor"/>
+      <path d="M170 125 L150 118" fill="currentColor"/>
+      <path d="M155 155 L138 140" fill="currentColor"/>
+      <path d="M130 175 L122 156" fill="currentColor"/>
+      <path d="M100 180 L100 160" fill="currentColor"/>
+      <path d="M70 175 L78 156" fill="currentColor"/>
+      <path d="M45 155 L62 140" fill="currentColor"/>
+      <path d="M30 125 L50 118" fill="currentColor"/>
+      <path d="M20 100 L40 100" fill="currentColor"/>
+      <path d="M30 75 L50 82" fill="currentColor"/>
+      <path d="M45 45 L62 60" fill="currentColor"/>
+      <path d="M70 25 L78 44" fill="currentColor"/>
+    </g>
+
+    <circle cx="100" cy="100" r="35" fill="currentColor" fill-opacity="0.08" />
+
+    <circle cx="100" cy="100" r="25" fill="currentColor" fill-opacity="0.12" />
+
+    <circle cx="100" cy="100" r="6" fill="currentColor" />
+    <path d="M100 100 L100 85" />
+    <path d="M100 100 L105 95" />
+    <path d="M100 100 L95 95" />
+  </g>
+</svg>
+`,
+'default_logo':`<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+  <g>
+    <circle cx="100" cy="100" r="70" fill="none" stroke="currentColor" stroke-width="3" />
+    <path d="M100 160
+             C112 172, 134 158, 124 136
+             C144 124, 135 98, 112 98
+             C112 92, 120 68, 136 60
+             C144 56, 144 50, 134 48
+             C122 46, 108 60, 100 75
+             C92 60, 78 46, 66 48
+             C56 50, 56 56, 64 60
+             C80 68, 88 92, 88 98
+             C65 98, 56 124, 76 136
+             C66 158, 88 172, 100 160Z
+             M104 98
+             Q100 88, 96 98Z" />
+  </g>
+</svg>
+`
 }
