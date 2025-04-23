@@ -22,12 +22,16 @@ export const cardStyles = css`
   --eyebrow-size: var(--fs-eyebrow);
   --eyebrow-color: var(--heading-color-floral);
   --eyebrow-font: var(--body-font-floral);
+  --eyebrow-weight: var(--body-font-weight-light-floral);
   --heading-color: var(--heading-color-floral);
   --heading-font: var(--heading-font-floral);
   --heading-size: var(--fs-heading-3);
+  --heading-weight: var(--heading-font-weight-floral);
   --description-font: var(--body-font-floral);
   --description-size: var(--fs-body); 
   --description-color: var(--body-color-flora);
+  --description-weight: var(--body-font-weight-floral);
+  --cta-weight: var(--heading-font-weight-light-floral);
   --background-color: var(--background-color-primary-floral);
   --border-radius: 8px;
   --border-width: 2px;
@@ -41,12 +45,16 @@ export const cardStyles = css`
   --eyebrow-size: var(--fs-eyebrow);
   --eyebrow-font: var(--body-font-sprawl);
   --eyebrow-color: var(--heading-color-sprawl);
+  --eyebrow-weight: var(--body-font-weight-light-sprawl);
   --heading-color: var(--heading-color-sprawl);
   --heading-font: var(--heading-font-sprawl);
   --heading-size: var(--fs-heading-3);
+  --heading-weight: var(--heading-font-weight-sprawl);
   --description-font: var(--body-font-sprawl);
   --description-size: var(--fs-body);
   --description-color: var(--body-color-sprawl);
+  --description-weight: var(--body-font-weight-sprawl);
+  --cta-weight: var(--heading-font-weight-light-sprawl);
   --background-color: var(--background-color-primary-sprawl);
   --border-color: var(--border-color-sprawl);
   --border-width: 1px;
@@ -60,12 +68,16 @@ export const cardStyles = css`
   --eyebrow-size: var(--fs-eyebrow);
   --eyebrow-font: var(--heading-font-default);
   --eyebrow-color: var(--heading-font-default);
+  --eyebrow-weight: var(--body-font-weight-light-default);
   --heading-color: var(--heading-color-default);
   --heading-size: var(--fs-heading-3);
   --heading-font: var(--heading-font-default);
+  --heading-weight: var(--heading-font-weight-default);
   --description-font: var(--body-font-default); 
   --description-size: var(--fs-body);
   --description-color: var(--body-color-default);
+  --description-weight: var(--body-font-weight-default);
+  --cta-weight: var(--heading-font-weight-light-default);
   --background-color: var(--background-color-primary-default);
   --border-radius: 4px;
   --border-width: 2px;
@@ -80,7 +92,7 @@ export const cardStyles = css`
   flex-direction: column;
   max-width: 450px;
   position: relative;
-  padding: var(--padding-1-175);
+  padding: var(--spacing-1-175);
   background-color: var(--background-color);
   border: var(--border-width) var(--border-color) solid;
   border-radius: var(--border-radius);
@@ -91,7 +103,7 @@ slot[name='eyebrow']::slotted(*) {
   color: var(--heading-color);
   font-family: var(--description-font);
   text-transform: uppercase;
-  font-weight: 200;
+  font-weight: var(--eyebrow-weight);
   margin: 0px;
 }
 
@@ -101,7 +113,7 @@ slot[name='heading']::slotted(*) {
   font-size: var(--heading-size);
   color: var(--heading-color);
   font-family: var(--heading-font);
-  font-weight: 600;
+  font-weight: var(--heading-weight);
   margin: 0px;
 }
 
@@ -109,6 +121,7 @@ slot[name='description']::slotted(*) {
   font-size: var(--description-size);
   font-family: var(--description-font);
   color: var(--description-color);
+  font-weight: var(--description-weight);
 }
 
 slot[name='image']::slotted(img),
@@ -126,6 +139,7 @@ slot[name='cta']::slotted(a) {
   font-size: var(--description-size);
   font-family: var(--description-font);
   text-decoration: none;
+  font-weight: var(--cta-weight);
 }
 
 slot[name='cta']::slotted(a)::after {
