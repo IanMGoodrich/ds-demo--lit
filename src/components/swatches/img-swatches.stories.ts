@@ -1,0 +1,27 @@
+import { html } from 'lit';
+import './img-swatches';
+import { sharedThemes } from '../../utilities/types';
+import theme from '../../styles/token-library.css'
+
+export default {
+  title: 'Basic Elements/Theme Swatches',
+  component: 'img-swatches',
+  tags: ['autodocs'],
+  argTypes: {
+    theme: {
+      options: sharedThemes,
+      control: {
+        type: 'select'
+      }
+    }
+  },
+  args: {
+    theme: 'default'
+  }
+};
+
+
+// @ts-expect-error because ts
+export const Default = ({theme}) => html`
+<img-swatches theme=${theme}></img-swatches>
+`;
