@@ -1,20 +1,78 @@
 img-footer {
-  nav {
+  nav[slot='top-nav'] {
     all: unset;
-  }
-  ul {
-    all: unset;
-    display: flex;
-    border: pink solid 2px;
-  }
-  li {
-    all: unset;
-    display: flex;
-    border: blue solid 2px;
-  }
-  a {
-    all: unset;
-    display: flex;
-    border: orange solid 2px;
+    color: var(--body-color);
+
+    ul {
+      all: unset;
+      display: flex;
+      gap: var(--spacing-1-175);
+      flex-wrap: wrap;
+      
+      li {
+        all: unset;
+        display: flex;
+        flex-direction: column;
+
+        a {
+          all: unset;
+          display: flex;
+          width: fit-content;
+          font-family: var(--link-font-main);
+          font-size: var(--link-size-main);
+          border-bottom: solid var(--border-color) 2px;
+          margin-bottom: .5rem;
+
+          &:hover {
+            border-color: var(--action-color-primary);
+            color: var(--action-color-secondary);
+          }
+          &:focus {
+            outline: solid 2px var(--action-color-secondary);
+          }
+        }
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: .5rem;
+
+          li a {
+            font-size: 12px;
+            margin-bottom: 0;
+            border-bottom: none;
+          }
+        }
+      }
+    }
   }
 }
+
+
+/* img-footer[theme='default'] {
+  --link-font-main: var(--heading-font-default);
+  --link-size-main: var(--fs-heading-6);
+  --action-color-secondary: var(--action-color-secondary-default);
+  --action-color-primary: var(--action-color-primary-default);
+  --background-color: var(--background-color-primary-default);
+  --body-color: var(--body-color-default);
+  --border-color: var(--border-color-default);
+} */
+/* img-footer[theme='sprawl'] {
+  --link-font-main: var(--heading-font-sprawl);
+  --link-size-main: var(--fs-heading-6);
+  --action-color-secondary: var(--action-color-secondary-sprawl);
+  --action-color-primary: var(--action-color-primary-sprawl);
+  --background-color: var(--background-color-primary-sprawl);
+  --body-color: var(--body-color-sprawl);
+  --border-color: var(--border-color-sprawl);
+} */
+/* img-footer[theme='floral'] {
+  --link-size-main: var(--fs-heading-6);
+  --link-font-main: var(--heading-font-floral);
+  --action-color-secondary: var(--action-color-secondary-floral);
+  --action-color-primary: var(--action-color-primary-floral);
+  --background-color: var(--background-color-primary-floral);
+  --body-color: var(--body-color-floral);
+  --border-color: var(--border-color-floral);
+} */

@@ -1,11 +1,14 @@
 import { LitElement, html } from "lit";
-import { customElement } from "lit/decorators.js"
-import { footerStyles } from "./img-footer-styles";
-
+import { customElement, property } from "lit/decorators.js"
+import { footerStyles } from "./img-footer-styles.ts";
+import { Theme } from "src/utilities/types";
 
 @customElement("img-footer")
 export class ImgFooter extends LitElement {
   static styles = footerStyles;
+
+  @property({type: String, reflect: true})
+  theme: Theme;
 
   render() {
     return html`
