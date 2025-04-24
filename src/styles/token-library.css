@@ -45,8 +45,8 @@
   --cl-text-default-dark: var(--cl-charcoal-darkest);
   --cl-text-default-light: var(--cl-lavender-lightest);
 
-  /* Fluid Spacing: Names in relation to min/max rem sizes */
-  --spacing-1-175: clamp(1rem, 0.4rem + 1.5vw, 1.75rem);
+  /* Fluid Spacing: Names in relation to min/max rem sizes by way of percentage. For example 100-350 means 1rem - 3.5rem*/
+  --spacing-100-175: clamp(1rem, 0.4rem + 1.5vw, 1.75rem);
 
 
   

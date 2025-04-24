@@ -3,7 +3,7 @@ export const swatchStyles = css`
 
 .img-swatch {
   display: flex;
-  padding: var(--spacing-1-175);
+  padding: var(--spacing-100-175);
   background-color: var(--bg-color);
 }
 

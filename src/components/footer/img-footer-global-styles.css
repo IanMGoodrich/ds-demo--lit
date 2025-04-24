@@ -6,7 +6,7 @@ img-footer {
     ul {
       all: unset;
       display: flex;
-      gap: var(--spacing-1-175);
+      gap: var(--spacing-100-175);
       flex-wrap: wrap;
       
       li {
