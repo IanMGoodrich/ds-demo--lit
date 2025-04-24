@@ -1,7 +1,6 @@
 import { html } from 'lit';
 import './img-swatches';
 import { sharedThemes } from '../../utilities/types';
-import theme from '../../styles/token-library.css'
 
 export default {
   title: 'Basic Elements/Theme Swatches',
