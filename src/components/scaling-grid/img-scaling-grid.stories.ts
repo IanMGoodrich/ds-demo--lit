@@ -137,7 +137,7 @@ When the grid shrinks to a single column the \`equal-height\` styles are removed
     justifyItems: 'center',
     alignItems: 'center',
     equalHeight: true,
-    oneColLayouts: 'centered',
+    oneColLayout: 'centered',
   }
 };
 
