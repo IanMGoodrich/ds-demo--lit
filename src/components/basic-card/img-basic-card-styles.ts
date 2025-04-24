@@ -92,10 +92,19 @@ export const cardStyles = css`
   flex-direction: column;
   max-width: 450px;
   position: relative;
-  padding: var(--spacing-1-175);
+  padding: var(--spacing-100-175);
   background-color: var(--background-color);
   border: var(--border-width) var(--border-color) solid;
   border-radius: var(--border-radius);
+}
+
+.img-basic-card--main-content{
+  display: grid;
+  height: 100%;
+}
+
+.cta-wrapper {
+  margin-top: auto;
 }
 
 slot[name='eyebrow']::slotted(*) {
