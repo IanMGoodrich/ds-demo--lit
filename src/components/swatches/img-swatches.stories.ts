@@ -1,5 +1,6 @@
 import { html } from 'lit';
 import './img-swatches';
+import '../scaling-grid/img-scaling-grid';
 import { sharedThemes } from '../../utilities/types';
 
 export default {

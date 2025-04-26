@@ -22,32 +22,45 @@ export const swatchStyles = css`
   }
 }
 
-.img-swatch--colors {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
 .color-swatch-wrapper {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  border: solid 2px var(--cl-charcoal-darkest);
+  justify-content: space-between;
+  border: solid 1px var(--cl-charcoal-lighter);
   background-color: var(--cl-white);
-  padding: 0.5rem;
-  width: fit-content;
-  
+  padding: 1.25rem;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
 
-  .color-value-label,
-  .color-var-label {
-    font-size: var(--fs-eyebrow);
-    color: var(--body-color);
-    font-family: var(--ff-body);
+  .color-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    .color-info {
+      display: flex;
+      flex-direction: column;
+
+      .color-value-label,
+      .color-var-label {
+        font-size: var(--fs-static-14);
+        color: var(--cl-charcoal-darkest);
+        font-family: var(--ff-satoshi);
+      }
+      .color-value-value,
+      .color-var-value {
+        font-size: var(--fs-static-14);
+        color: var(--cl-charcoal-darkest);
+        font-family: var(--ff-satoshi-it);
+        font-weight: 600;
+      }
+    }
   }
+  
   .color-swatch{
     display: block;
-    height: 25px;
-    width: 25px;
+    height: 45px;
+    width: 45px;
+    border: solid 1px var(--cl-charcoal-lighter);
   }
 }
 
@@ -60,6 +73,7 @@ export const swatchStyles = css`
   --ff-body: var(--body-font-default);
   --body-color: var(--body-color-default);
 }
+
 :host([theme='sprawl']) {
   --bg-color: var(--background-color-primary-sprawl);
   --ff-heading: var(--heading-font-sprawl);
@@ -69,6 +83,7 @@ export const swatchStyles = css`
   --ff-body: var(--body-font-sprawl);
   --body-color: var(--body-color-sprawl);
 }
+
 :host([theme='floral']) {
   --bg-color: var(--background-color-primary-floral);
   --ff-heading: var(--heading-font-floral);
@@ -78,5 +93,4 @@ export const swatchStyles = css`
   --ff-body: var(--body-font-floral);
   --body-color: var(--body-color-floral);
 }
-
 `

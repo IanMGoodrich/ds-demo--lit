@@ -1,15 +1,13 @@
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js"
 import { swatchStyles } from "./img-swatches-styles";
+import { globalOverrides } from "@styles/overrides";
 import tokens from '../../styles/token-library.css?raw';
 import { Theme, CssVarVal } from "src/utilities/types";
-
-
-
-
+import '../scaling-grid/img-scaling-grid';
 @customElement("img-swatches")
 export class ImgSwatches extends LitElement {
-  static styles = swatchStyles;
+  static styles = [swatchStyles, globalOverrides];
 
   @property({type: Array})
   colorTokens: Array<CssVarVal>;
@@ -33,9 +31,8 @@ export class ImgSwatches extends LitElement {
     
     this.colorTokens = this.filterTheme(tokens, colorMatch);
     this.themeTokens  = this.filterTheme(tokens, themeMatch);
-    this.themeColorTokens  = this.filterTheme(tokens, themeColorMatch);    
+    this.themeColorTokens  = this.filterTheme(tokens, themeColorMatch);
   }
-
 
   render() {
     return html`
@@ -47,15 +44,21 @@ export class ImgSwatches extends LitElement {
             </h3>
             <p class="img-swatch--body">Vivamus lacinia lacus vel neque egestas, vitae volutpat purus dapibus. Nullam nec ultricies erat. Etiam ac urna metus. Sed cursus libero id ullamcorper interdum. Donec non urna et erat vehicula porttitor. Vivamus a sagittis dolor. Nulla facilisi. Cras euismod orci at felis cursus, vel vulputate sapien suscipit.</p>
             <a class="img-swatch--link" href="#">Link example</a>
+            <a class="img-swatch--link-hover" href="#">Link hover example</a>
+            <a class="img-swatch--link-focus" href="#">Link focus example</a>
           </div>
           <div class="img-swatch--colors-wrapper">
             <h4> Theme colors: </h4>
             <div class="img-swatch--colors">
-              ${this.themeColorTokens?.map(color => this.generateSwatches(color))}
+              <img-scaling-grid columns="4" col-gap="1rem" row-gap="1rem" item-min-width="250px">
+                ${this.themeColorTokens?.map(color => this.generateSwatches(color))}
+              </img-scaling-grid>
             </div>
             <h4> Base colors: </h4>
             <div class="img-swatch--colors">
-              ${this.colorTokens?.map(color => this.generateSwatches(color))}
+              <img-scaling-grid columns="4" col-gap="1rem" row-gap="1rem" item-min-width="250px">
+                ${this.colorTokens?.map(color => this.generateSwatches(color))}
+              </img-scaling-grid>
             </div>
           </div>
         </div>
@@ -66,9 +69,17 @@ export class ImgSwatches extends LitElement {
   generateSwatches(cssVar: CssVarVal) {
     return html `
       <div class="color-swatch-wrapper">
+        <div class="color-info-wrapper">
+          <div class="color-info">
+            <span class="color-var-label">Variable name:</span>
+            <span class="color-var-value">${cssVar.var}</span>
+          </div>
+          <div class="color-info">
+            <span class="color-value-label">Variable value:</span>
+            <span  class="color-value-value">${cssVar.val}</span>
+          </div>
+        </div>
         <span class="color-swatch" style='background: ${cssVar.val}'></span>
-        <span class="color-var-label">Variable name: ${cssVar.var}</span>
-        <span class="color-value-label">Variable value: ${cssVar.val}</span>
       </div>
     `
   }
