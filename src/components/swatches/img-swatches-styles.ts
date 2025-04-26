@@ -8,17 +8,45 @@ export const swatchStyles = css`
 }
 
 .img-swatch--typography {
-  .img-swatch--heading {
-    font-size: var(--fs-heading-3);
-    font-family: var(--ff-heading);
-    color: var(--heading-color);
-    font-weight: var(--heading-font-weight);
-  }
-  .img-swatch--body {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.img-swatch--heading {
+  font-size: var(--fs-heading-3);
+  font-family: var(--ff-heading);
+  color: var(--heading-color);
+  font-weight: var(--heading-font-weight);
+}
+
+.img-swatch--body {
+  font-size: var(--fs-body);
+  font-family: var(--ff-body);
+  color: var(--body-color);
+  font-weight: var(--body-font-weight);
+}
+
+.img-swatch--links-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: .75rem;
+
+  [class*='img-swatch--link'] {
     font-size: var(--fs-body);
     font-family: var(--ff-body);
-    color: var(--body-color);
-    font-weight: var(--body-font-weight);
+  }
+}
+
+.img-swatch--colors-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  margin-top: 1rem;
+
+  h4 {
+    font-size: var(--fs-heading-6);
+    font-weight: 600;
   }
 }
 
@@ -31,37 +59,38 @@ export const swatchStyles = css`
   padding: 1.25rem;
   width: -webkit-fill-available;
   height: -webkit-fill-available;
+}
 
-  .color-info-wrapper {
-    display: flex;
-    flex-direction: column;
-    row-gap: 1rem;
-    .color-info {
-      display: flex;
-      flex-direction: column;
+.color-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.color-info {
+  display: flex;
+  flex-direction: column;
+}
 
-      .color-value-label,
-      .color-var-label {
-        font-size: var(--fs-static-14);
-        color: var(--cl-charcoal-darkest);
-        font-family: var(--ff-satoshi);
-      }
-      .color-value-value,
-      .color-var-value {
-        font-size: var(--fs-static-14);
-        color: var(--cl-charcoal-darkest);
-        font-family: var(--ff-satoshi-it);
-        font-weight: 600;
-      }
-    }
-  }
-  
-  .color-swatch{
-    display: block;
-    height: 45px;
-    width: 45px;
-    border: solid 1px var(--cl-charcoal-lighter);
-  }
+.color-value-label,
+.color-var-label {
+  font-size: var(--fs-static-14);
+  color: var(--cl-charcoal-darkest);
+  font-family: var(--ff-satoshi);
+}
+
+.color-value-value,
+.color-var-value {
+  font-size: var(--fs-static-14);
+  color: var(--cl-charcoal-darkest);
+  font-family: var(--ff-satoshi-it);
+  font-weight: 600;
+}
+
+.color-swatch{
+  display: block;
+  height: 45px;
+  width: 45px;
+  border: solid 1px var(--cl-charcoal-lighter);
 }
 
 :host([theme='default']) {

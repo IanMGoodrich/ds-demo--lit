@@ -43,9 +43,11 @@ export class ImgSwatches extends LitElement {
               Heading Text
             </h3>
             <p class="img-swatch--body">Vivamus lacinia lacus vel neque egestas, vitae volutpat purus dapibus. Nullam nec ultricies erat. Etiam ac urna metus. Sed cursus libero id ullamcorper interdum. Donec non urna et erat vehicula porttitor. Vivamus a sagittis dolor. Nulla facilisi. Cras euismod orci at felis cursus, vel vulputate sapien suscipit.</p>
-            <a class="img-swatch--link" href="#">Link example</a>
-            <a class="img-swatch--link-hover" href="#">Link hover example</a>
-            <a class="img-swatch--link-focus" href="#">Link focus example</a>
+            <div class="img-swatch--links-wrapper">
+              <a class="img-swatch--link" href="#">Link example</a>
+              <a class="img-swatch--link-hover" href="#">Link hover example</a>
+              <a class="img-swatch--link-focus" href="#">Link focus example</a>
+            </div>
           </div>
           <div class="img-swatch--colors-wrapper">
             <h4> Theme colors: </h4>
