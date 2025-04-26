@@ -21,7 +21,7 @@ You can control the layout and behavior with the following props.
   * \`item-min-width\`: The minimum width slotted items should reach before dropping down a column in width. Use only \`px\` or \`rem\`. default: \`350px\`, 
   * \`align-items\`: The vertical alignment of slotted content in rows of greater than one. Use \`start\` \`end\` \`center\`, 
   * \`justify-items\`: The horizontal alignment of slotted content in rows of greater than one. Use \`start\` \`end\` \`center\`.  default: \`center\`, 
-  * \`equal-height\`: Sets slotted content to \`height: 100%\` to make it stretch to match the height of other siblings in the same row. default: \`false\`,
+  * \`equal-height\`: Sets slotted content to \`display: flex\` \`height: 100%\` to make it stretch to match the height of other siblings in the same row. Note this may interfere with styles present on slotted content. default: \`false\`,
   * \`one-col-layout\`: When the grid less than the width of two columns but greater that the width of a single item, sets slotted content to either \`centered (margin: 0 auto)\` or \`full-width (width: 100%)\`. default: \`centered\`, 
 
 #### Note:

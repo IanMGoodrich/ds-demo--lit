@@ -1,6 +1,7 @@
 import { LitElement, html } from "lit";
-import { customElement, property, queryAssignedElements } from "lit/decorators.js";
+import { customElement, property, queryAssignedElements, query } from "lit/decorators.js";
 import { scalingGridStyles } from "./img-scaling-grid-styles";
+import { globalOverrides } from "@styles/overrides";
 import { styleMap } from 'lit/directives/style-map.js';
 import { debounce } from '../../utilities/debounce';
 
@@ -13,7 +14,7 @@ type ScalingGridItemAlignment = (typeof gridItemAlignments)[number];
 
 @customElement("img-scaling-grid")
 export class ImgScalingGrid extends LitElement {
-  static styles = scalingGridStyles;
+  static styles = [scalingGridStyles, globalOverrides];
   
   /**
    * Maximum column count.
@@ -43,13 +44,13 @@ export class ImgScalingGrid extends LitElement {
    * Column alignment. Use flex/grid values 'center', 'start', 'end'
    */
   @property({
-    type: String, reflect: false, attribute: 'align-items'})
+    type: String, reflect: true, attribute: 'align-items'})
   alignItems: ScalingGridItemAlignment;
 
   /**
    * Row alignment. Use flex/grid values 'center', 'start', 'end' 
    */
-  @property({type: String, reflect: false, attribute: 'justify-items'})
+  @property({type: String, reflect: true, attribute: 'justify-items'})
   justifyItems: ScalingGridItemAlignment = 'center';
 
   /**
@@ -77,45 +78,23 @@ export class ImgScalingGrid extends LitElement {
   @queryAssignedElements({flatten: true})
   slottedContent: Array<HTMLElement>
 
+  /**
+   * Ref to the grid container
+   */
+  @query(".img-grid") gridRef: HTMLElement;
+
+  private resizeObserver?: ResizeObserver;
   private debouncedResize = debounce(() => this.handleOneCol(), 0);
 
   connectedCallback(): void {
     super.connectedCallback();
-    window.addEventListener('resize', this.debouncedResize)
   }
 
   disconnectedCallback(): void {
-    window.removeEventListener('resize', this.debouncedResize)
-    super.disconnectedCallback()
+    this.resizeObserver?.disconnect();
+    super.disconnectedCallback();
   }
 
-  handleOneCol() {        
-    const docWidth = document.documentElement.clientWidth;
-    const rowCount = new Set<number>();
-    this.slottedContent.forEach((el) => {
-      rowCount.add((el as HTMLElement).offsetTop);
-    });
-
-    if (this.oneCol) {
-      return this.oneCol = (this.convertRemToPx(this.itemMinWidth) * 2.25) > docWidth;
-    } else {
-      return this.oneCol = rowCount.size === this.slottedContent.length;
-    }
-  }
-
-  /**
-   * Timeout set to allow slotted content to paint.
-   */
-  firstUpdated() {    
-    setTimeout(() => this.handleOneCol(),0)
-  }
-  
-  updated(changedProps: Map<string, unknown>) {
-    if (changedProps.has('columns')) {
-      this.columns = this.parseClampedInt(this.columns, 4, 1).toString();
-    }
-  }
-  
   render() {
     const styleVars = {
       '--max-cols': this.columns,
@@ -133,17 +112,47 @@ export class ImgScalingGrid extends LitElement {
     </section>`;
   }
 
-  parseClampedInt(val: string, fallback: number, min: number): number {
+  private handleOneCol() {
+    if (!this.gridRef) return;
+    const containerWidth = this.gridRef.offsetWidth;
+    const minItemWidth = this.convertValueToNum(this.itemMinWidth);
+    const maxPossibleCols = Math.floor(containerWidth / minItemWidth);
+    const isSingleCol = maxPossibleCols <= 1;
+
+    if (this.oneCol !== isSingleCol) {
+      this.oneCol = isSingleCol;
+    }
+  }
+
+  protected firstUpdated() {
+    this.resizeObserver = new ResizeObserver(() => {
+      this.debouncedResize();
+    });
+    if (this.gridRef) {
+      this.resizeObserver.observe(this.gridRef);
+    }
+    this.handleOneCol();
+  }
+  
+  protected updated(changedProps: Map<string, unknown>) {
+    if (changedProps.has('columns')) {
+      this.columns = this.parseClamp(this.columns, 4, 1).toString();
+    }
+  }
+
+  private parseClamp(val: string, fallback: number, min: number): number {
     const parsed = parseInt(val);
     return isNaN(parsed) ? fallback : Math.max(min, Math.floor(parsed));
   }
 
-  convertRemToPx(item: string) {
-    if (item.endsWith('rem')) {
-      return parseFloat(item) * 16;
-    } else {
-      return parseInt(item, 10);
+  private convertValueToNum(value: string) {
+    if (value.endsWith("rem")) {
+      return parseFloat(value) * 16;
     }
+    if (value.endsWith("px")) {
+      return parseFloat(value);
+    }
+    return parseFloat(value) || 0;
   }
 }
 

@@ -13,7 +13,8 @@ export const scalingGridStyles = css`
 
   :host:not([one-col]){
     ::slotted(*) {
-      display: flex;
+      display: block;
+      width: 100%;
       align-self: var(--align-items);
       justify-self: var(--justify-items);
       height: fit-content;
@@ -22,6 +23,7 @@ export const scalingGridStyles = css`
 
   :host([equal-height]:not([one-col])) {
     ::slotted(*) {
+      display: flex;
       height: 100%;
     }
   }
