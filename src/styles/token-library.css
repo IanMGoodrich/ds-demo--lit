@@ -12,10 +12,14 @@
 
   /* Font Sizes: Clamped to 640px - 1440px */
 
+  /* 10px - 12px */
+  --fs-legal: clamp(0.625rem, 0.525rem + 0.25vw, 0.75rem);
   /* 14px - 16px */
   --fs-eyebrow: clamp(0.875rem, 0.775rem + 0.25vw, 1rem);
   /* 16px - 20px */
   --fs-body: clamp(1rem, 0.8rem + 0.5vw, 1.25rem);
+  /* 14px */
+  --fs-static-14: 14px;
 
   
   /* 18px - 22px */
@@ -35,6 +39,7 @@
   /* General Colors */
   --cl-orange-hot: #db4223;
   --cl-charcoal-darkest: #141414;
+  --cl-charcoal-lighter: #5E5B5B;
   --cl-lavender-lightest: #fbfaff;
   --cl-chartreuse-lightest: #ccffde;
   --cl-lemon-lightest: #c2c2bc;
