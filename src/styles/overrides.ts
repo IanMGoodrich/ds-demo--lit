@@ -13,4 +13,9 @@ p {
 p:first-of-type {
   margin-top: 1rem;
 }
+
+a {
+  all: unset;
+  cursor: pointer;
+}
 `
