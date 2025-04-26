@@ -1,6 +1,7 @@
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js"
 import  {logoStyles} from './img-logo-styles';
+import { globalOverrides } from "@styles/overrides";
 import { Theme } from "src/utilities/types";
 import '../svg/img-svg';
 
@@ -9,7 +10,7 @@ export type Logo = (typeof logoVariants)[number];
 
 @customElement("img-logo")
 export class ImgLogo extends LitElement {
-  static styles = logoStyles;
+  static styles = [logoStyles, globalOverrides];
 
   @property({type: String, reflect: true})
   logo: Logo;

@@ -1,13 +1,14 @@
 import { LitElement, html } from "lit";
 import { customElement, property, query} from "lit/decorators.js";
 import { socialShareStyles } from "./img-social-share-styles";
+import { globalOverrides } from "@styles/overrides";
 import socials from './socialsData';
 import { Theme } from "src/utilities/types";
 import '../svg/img-svg';
 
 @customElement("img-social-share")
 export class ImgSocialShare extends LitElement {
-  static styles = socialShareStyles;
+  static styles = [socialShareStyles, globalOverrides];
 
   @property({type: String, reflect: true})
   theme: Theme;

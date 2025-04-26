@@ -1,6 +1,7 @@
 import { LitElement, html } from "lit";
 import { customElement, property, queryAssignedElements } from "lit/decorators.js"
 import { cardStyles } from "./img-basic-card-styles";
+import { globalOverrides } from "@styles/overrides";
 import { Theme } from "src/utilities/types";
 
 /**
@@ -14,7 +15,7 @@ import { Theme } from "src/utilities/types";
 
 @customElement("img-basic-card")
 export class ImgBasicCard extends LitElement {
-  static styles = cardStyles;
+  static styles = [cardStyles, globalOverrides];
 
   /**
    * Ref to cta slot
