@@ -2,6 +2,7 @@ import { html } from 'lit';
 import './img-footer';
 import { sharedThemes } from '../../utilities/types';
 import '../logo/img-logo'
+import '../social-share/img-social-share';
 
 export default {
   title: 'Components/Footer',
@@ -44,7 +45,7 @@ export const Default = ({theme, logo}) => html`
         </li>
         <li><a href="#">Careers</a>
           <ul>
-            <li><a href="#">Internships and apprenticeships </a></li>
+            <li><a href="#">Apprenticeships </a></li>
             <li><a href="#">Data analyst</a></li>
             <li><a href="#">Legal tram</a></li>
             <li><a href="#">Project management</a></li>
@@ -52,5 +53,12 @@ export const Default = ({theme, logo}) => html`
         </li>
       </ul>
     </nav>
+    <ul slot="legal">
+      <li><a href="#">Accessibility</a></li>
+      <li><a href="#">Terms of use</a></li>
+      <li><a href="#">Privacy & Legal</a></li>
+    </ul>
+    <img-social-share theme=${theme} li yt insta twx fb slot="social"></img-social-share>
+    <p slot="copyright">© 2025 ${theme} Industries</p>
   </img-footer>
   `;

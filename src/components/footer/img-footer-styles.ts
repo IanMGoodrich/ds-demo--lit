@@ -5,14 +5,57 @@ export const footerStyles = css`
   background-color: var(--background-color);
 }
 
+.img-footer-wrapper {
+  padding: 2rem;
+}
+
 .img-footer--top-content {
   display: flex; 
   justify-content: space-between;
+  flex-direction: column;
+  row-gap: 2rem;
   align-items: center;
-  
-  @media(min-width: env(mobile-breakpoint)) {
-      border: solid 12px red;
-   }
+
+  @media(min-width: 768px) {
+    align-items: unset;
+    flex-direction: row;
+  }
+}
+
+.img-footer--nav-social {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  row-gap: 2rem;
+}
+
+.img-footer--social-wrapper {
+  width: fit-content;
+  align-self: center;
+
+  @media(min-width: 768px) {
+    flex-direction: row;
+    align-self: flex-end;
+  }
+}
+
+.img-footer--bottom-content {
+  padding-top: 1rem;
+  margin-top: 2rem;
+  border-top: solid 1px var(--border-color);
+}
+
+.img-footer--legal-copyright {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: var(--body-color);
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 }
 
 :host([theme='default']) {
