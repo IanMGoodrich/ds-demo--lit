@@ -1,7 +1,7 @@
 import { LitElement, html } from "lit";
 import { customElement, property, queryAssignedElements, query } from "lit/decorators.js";
 import { scalingGridStyles } from "./img-scaling-grid-styles";
-import { globalOverrides } from "@styles/overrides";
+import { globalShared } from "@styles/shared-shadow-dom";
 import { styleMap } from 'lit/directives/style-map.js';
 import { debounce } from '../../utilities/debounce';
 
@@ -14,7 +14,7 @@ type ScalingGridItemAlignment = (typeof gridItemAlignments)[number];
 
 @customElement("img-scaling-grid")
 export class ImgScalingGrid extends LitElement {
-  static styles = [scalingGridStyles, globalOverrides];
+  static styles = [scalingGridStyles, globalShared];
   
   /**
    * Maximum column count.
