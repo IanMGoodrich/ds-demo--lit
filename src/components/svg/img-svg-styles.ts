@@ -6,6 +6,7 @@ export const svgStyles = css`
   svg {
     color: var(--svg-fill);  
     fill: var(--svg-fill);
-    width: var(--svg-size);  
+    width: 100%;
+    max-width: var(--svg-size);  
   }
 `

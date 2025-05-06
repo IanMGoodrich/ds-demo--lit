@@ -2,12 +2,12 @@ import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js"
 import { unsafeSVG } from "lit/directives/unsafe-svg.js";
 import { svgStyles } from "./img-svg-styles.ts";
-import { globalOverrides } from "@styles/overrides.ts";
+import { globalShared } from "@styles/shared-shadow-dom";
 import svgs from '../../assets/vectors.ts';
 
 @customElement("img-svg")
 export class ImgSvg extends LitElement {
-  static styles = [svgStyles, globalOverrides];
+  static styles = [svgStyles, globalShared];
 
   /** 
    * Svg name. 
