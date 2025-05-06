@@ -1,13 +1,13 @@
 import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js"
 import { swatchStyles } from "./img-swatches-styles";
-import { globalOverrides } from "@styles/overrides";
+import { globalShared } from "@styles/shared-shadow-dom";
 import tokens from '../../styles/token-library.css?raw';
 import { Theme, CssVarVal } from "src/utilities/types";
 import '../scaling-grid/img-scaling-grid';
 @customElement("img-swatches")
 export class ImgSwatches extends LitElement {
-  static styles = [swatchStyles, globalOverrides];
+  static styles = [swatchStyles, globalShared];
 
   @property({type: Array})
   colorTokens: Array<CssVarVal>;
@@ -47,6 +47,8 @@ export class ImgSwatches extends LitElement {
               <a class="img-swatch--link" href="#">Link example</a>
               <a class="img-swatch--link-hover" href="#">Link hover example</a>
               <a class="img-swatch--link-focus" href="#">Link focus example</a>
+              <a class="default-link" href="#">Link Class example</a>
+              <slot name="link-cta-default"></slot>
             </div>
           </div>
           <div class="img-swatch--colors-wrapper">

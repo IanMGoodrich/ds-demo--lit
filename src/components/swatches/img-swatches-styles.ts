@@ -35,6 +35,29 @@ export const swatchStyles = css`
   [class*='img-swatch--link'] {
     font-size: var(--fs-body);
     font-family: var(--ff-body);
+    font-weight: var(--link-weight);
+    width: fit-content;
+    text-decoration: none;
+  }
+  .img-swatch--link {
+    color: var(--link-color);
+  }
+  .img-swatch--link-hover {
+    color: var(--link-color-hover);
+
+    &::after {
+      content: '';
+      display: flex;
+      height: 2px;
+      width: 100%;
+      background-color: var(--link-color-outline);
+    }
+  }
+
+  .img-swatch--link-focus {
+    color: var(--link-color-focus);
+    outline: solid var(--outline-width) var(--outline-color);
+    outline-offset: var(--outline-offset);
   }
 }
 
@@ -47,6 +70,7 @@ export const swatchStyles = css`
   h4 {
     font-size: var(--fs-heading-6);
     font-weight: 600;
+    color: var(--heading-color);
   }
 }
 
@@ -101,6 +125,14 @@ export const swatchStyles = css`
   --fs-body: var(--fs-body);
   --ff-body: var(--body-font-default);
   --body-color: var(--body-color-default);
+  --link-size: var(--fs-body);
+  --link-color: var(--body-color-default);
+  --link-weight: var(--link-font-weight-default);
+  --link-color-hover: var(--action-color-primary-default);
+  --link-color-focus: var(--action-color-primary-default);
+  --outline-color: var(--action-color-primary-default);
+  --outline-width: var(--outline-width-default);
+  --outline-offset: var(--outline-offset-default);
 }
 
 :host([theme='sprawl']) {
@@ -111,6 +143,14 @@ export const swatchStyles = css`
   --fs-body: var(--fs-body);
   --ff-body: var(--body-font-sprawl);
   --body-color: var(--body-color-sprawl);
+  --link-size: var(--fs-body);
+  --link-weight: var(--link-font-weight-sprawl);
+  --link-color: var(--link-color-static-sprawl);
+  --link-color-hover: var(--action-color-primary-sprawl);
+  --link-color-focus: var(--action-color-primary-sprawl);
+  --outline-color: var(--action-color-primary-sprawl);
+  --outline-width: var(--outline-width-sprawl);
+  --outline-offset: var(--outline-offset-sprawl);
 }
 
 :host([theme='floral']) {
@@ -121,5 +161,13 @@ export const swatchStyles = css`
   --fs-body: var(--fs-body);
   --ff-body: var(--body-font-floral);
   --body-color: var(--body-color-floral);
+  --link-size: var(--fs-body);
+  --link-weight: var(--link-font-weight-floral);
+  --link-color: var(--link-color-static-floral);
+  --link-color-hover: var(--action-color-primary-floral);
+  --link-color-focus: var(--action-color-primary-floral);
+  --outline-color: var(--action-color-primary-floral);
+  --outline-width: var(--outline-width-floral);
+  --outline-offset: var(--outline-offset-floral);
 }
 `
