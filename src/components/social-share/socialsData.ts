@@ -14,6 +14,11 @@ export default {
     share: 'https://www.instagram.com/p/',
     home: ''
   },
+  youtube: {
+    svg:'youtube',
+    share: 'https://youtu.be/',
+    home: ''
+  },
   linkedin: {
     svg:'linkedin',
     share: 'https://www.linkedin.com/shareArticle?mini=true&url=',

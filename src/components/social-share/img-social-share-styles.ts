@@ -8,10 +8,11 @@ export const socialShareStyles = css`
     display: flex;
     flex-wrap: wrap;
     padding: 1rem;
+    width: fit-content;
     border: solid var(--border-width) var(--border-color);
     background-color: var(--background-color);
     border-radius: var(--border-radius);
-    column-gap: 1rem;
+    gap: 1rem;
     align-items: baseline;
   }
 

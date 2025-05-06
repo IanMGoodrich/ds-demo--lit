@@ -1,14 +1,14 @@
 import { LitElement, html } from "lit";
 import { customElement, property, query} from "lit/decorators.js";
 import { socialShareStyles } from "./img-social-share-styles";
-import { globalOverrides } from "@styles/overrides";
+import { globalShared } from "@styles/shared-shadow-dom";
 import socials from './socialsData';
 import { Theme } from "src/utilities/types";
 import '../svg/img-svg';
 
 @customElement("img-social-share")
 export class ImgSocialShare extends LitElement {
-  static styles = [socialShareStyles, globalOverrides];
+  static styles = [socialShareStyles, globalShared];
 
   @property({type: String, reflect: true})
   theme: Theme;
@@ -21,6 +21,11 @@ export class ImgSocialShare extends LitElement {
    */
   @property({type: Boolean, reflect: true})
   fb:boolean;
+  /**
+   * YouTube
+   */
+  @property({type: Boolean, reflect: true})
+  yt:boolean;
   /**
    * Twitter
    */
@@ -58,6 +63,7 @@ export class ImgSocialShare extends LitElement {
       <nav class="img-social-share">
         <ul class="img-social-share--list">
           ${this.fb ? this.generateListItems('facebook') : null}
+          ${this.yt? this.generateListItems('youtube') : null}
           ${this.twx ? this.generateListItems('twitter') : null}
           ${this.insta ? this.generateListItems('insta') : null}
           ${this.li ? this.generateListItems('linkedin') : null}
