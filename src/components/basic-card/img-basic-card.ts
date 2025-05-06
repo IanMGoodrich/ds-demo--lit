@@ -1,7 +1,7 @@
 import { LitElement, html } from "lit";
 import { customElement, property, queryAssignedElements } from "lit/decorators.js"
 import { cardStyles } from "./img-basic-card-styles";
-import { globalOverrides } from "@styles/overrides";
+import { globalShared } from "@styles/shared-shadow-dom";
 import { Theme } from "src/utilities/types";
 
 /**
@@ -15,12 +15,12 @@ import { Theme } from "src/utilities/types";
 
 @customElement("img-basic-card")
 export class ImgBasicCard extends LitElement {
-  static styles = [cardStyles, globalOverrides];
+  static styles = [cardStyles, globalShared];
 
   /**
    * Ref to cta slot
    */
-  @queryAssignedElements({slot: 'cta', flatten: true})
+  @queryAssignedElements({slot: 'link-cta-default', flatten: true})
   ctaRef: Array<HTMLElement>;
 
   /**
@@ -61,14 +61,14 @@ export class ImgBasicCard extends LitElement {
             <slot name="description"></slot>
           </div>
           <div class="cta-wrapper">
-            <slot name="cta"></slot>
+            <slot name="link-cta-default"></slot>
           </div>
         </div>
       </section>
     `;
   }
 
-  handleSilentCTA() {    
+  handleSilentCTA() {        
     if (this.ctaRef.length <= 0) {
       return;
     }

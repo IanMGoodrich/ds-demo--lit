@@ -1,23 +1,5 @@
 import { css } from "lit";
 export const cardStyles = css`
-:host {
-  display: flex;
-  width: fit-content;
-  --heading-line-height: 1;
-  --heading-bottom-padding: 0.5rem;
-}
-
-:host([silent-link]) {
-  .cta-wrapper {
-    height: 0px;
-    width: 0px;
-  }
-  slot[name='cta']::slotted(a) {
-    height: 0px;
-    width: 0px;
-  }
-}
-
 :host([theme='floral']) {
   --eyebrow-size: var(--fs-eyebrow);
   --eyebrow-color: var(--heading-color-floral);
@@ -87,6 +69,25 @@ export const cardStyles = css`
   --action-color-secondary: var(--action-color-secondary-default);
 }
 
+:host {
+  display: flex;
+  width: fit-content;
+  --heading-line-height: 1;
+  --heading-bottom-padding: 0.5rem;
+}
+
+:host([silent-link]) {
+  .cta-wrapper {
+    height: 0px;
+    width: 0px;
+  }
+  slot[name='link-cta-default']::slotted(a) {
+    height: 0px;
+    width: 0px;
+  }
+}
+
+
 .img-basic-card {
   display: flex;
   flex-direction: column;
@@ -140,32 +141,8 @@ slot[name='image']::slotted(picture) {
   height: auto;
 }
 
-slot[name='cta']::slotted(a) {
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-  color: var(--description-color);
-  font-size: var(--description-size);
-  font-family: var(--description-font);
-  text-decoration: none;
-  font-weight: var(--cta-weight);
-}
 
-slot[name='cta']::slotted(a)::after {
-  content: '';
-  display: flex;
-  height: 2px;
-  width: 0px;
-  transition: var(--duration-time);
-  background-color: var(--action-color-primary);
-}  
-
-slot[name='cta']::slotted(a:hover)::after {
-  transition: var(--duration-time);
-  width: 100%;
-}
-
-slot[name='cta']::slotted(a)::before {
+slot[name='link-cta-default']::slotted(a)::before {
   display: flex;
   content: '';
   position: absolute;
@@ -173,11 +150,11 @@ slot[name='cta']::slotted(a)::before {
   z-index: 1;
 }
 
-slot[name='cta']::slotted(a:focus) {
+slot[name='link-cta-default']::slotted(a:focus) {
   outline: none;
 }
 
-slot[name='cta']::slotted(a:focus)::before {
+slot[name='link-cta-default']::slotted(a:focus)::before {
   outline: solid 2px var(--border-color);
   outline-offset: 4px;
 }
