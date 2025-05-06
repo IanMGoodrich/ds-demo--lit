@@ -1,11 +1,9 @@
-// vite.config.ts
 import { defineConfig } from 'vite';
 import path from 'path';
 
 export default defineConfig({
   root: '.',
   publicDir: 'public',
-
   resolve: {
     alias: {
       '@components': path.resolve(__dirname, './src/components'),
@@ -14,24 +12,17 @@ export default defineConfig({
     },
     extensions: ['.ts', '.js', '.json'],
   },
-
   build: {
     target: 'esnext',
     outDir: 'dist',
     emptyOutDir: true,
     cssCodeSplit: true,
   },
-
   server: {
     port: 5173,
     open: true,
   },
-
   css: {
-    preprocessorOptions: {
-      css: {
-        charset: false,
-      },
-    },
+    postcss: './postcss.config.ts',
   },
 });
