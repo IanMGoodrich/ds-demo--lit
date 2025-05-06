@@ -35,18 +35,19 @@
   /* 44px - 66px */
   --fs-heading-1: clamp(2.75rem, 1.65rem + 2.75vw, 4.125rem);
 
-
   /* General Colors */
-  --cl-orange-hot: #db4223;
   --cl-charcoal-darkest: #141414;
   --cl-charcoal-lighter: #5E5B5B;
   --cl-lavender-lightest: #fbfaff;
-  --cl-chartreuse-lightest: #ccffde;
+  --cl-chartreuse-lightest: #E5FFEE;
   --cl-lemon-lightest: #c2c2bc;
-  --cl-display-dull: #bab08d;
   --cl-white: #ffff;
-  --cl-green-dark: #017803;
+  --cl-display-dull: #bab08d;
+  --cl-golden: #FECF49;
+  --cl-orange-hot: #CA3D21;
   --cl-powder-blue: #4287f5;
+  --cl-blue-lavender: #543DFF;
+  --cl-green-dark: #017803;
   --cl-text-default-dark: var(--cl-charcoal-darkest);
   --cl-text-default-light: var(--cl-lavender-lightest);
 
@@ -66,22 +67,28 @@
           --body-font-default: var(--ff-bespoke-sans);
           --body-font-weight-default: 350;
           --body-font-weight-light-default: 300;
-        /* Color */
-        --heading-color-default: var(--cl-text-default-dark);
-        --body-color-default: var(--cl-text-default-dark);
-      /* Palette */
-        /* Action Colors - Duration */
-        --action-color-primary-default: var(--cl-powder-blue);
-        --action-color-secondary-default: var(--cl-charcoal-darkest);
-        --action-duration-primary-default: 0.4s;
-        /* Static Colors */
-        --background-color-primary-default: var(--cl-white);
-        --border-color-default: var(--cl-charcoal-darkest);
-        --svg-color-default: var(--cl-charcoal-darkest);
+          --link-font-weight-default: 500;
+          --link-color-static-default: var(--cl-text-default-dark);
+          /* Color */
+          --heading-color-default: var(--cl-text-default-dark);
+          --body-color-default: var(--cl-text-default-dark);
+          /* Palette */
+          /* Action Colors - Duration */
+          --action-color-primary-default: var(--cl-powder-blue);
+          --action-color-secondary-default: var(--cl-charcoal-darkest);
+          --action-duration-primary-default: 0.4s;
+          /* Static Colors */
+          --background-color-primary-default: var(--cl-white);
+          --border-color-default: var(--cl-charcoal-darkest);
+          --svg-color-default: var(--cl-charcoal-darkest);
         
-    
-    /* Sprawl */
-      /* Typography */
+          /* Static characteristics */
+          --border-radius-default: 12px;
+          --outline-offset-default: 2px;
+          --outline-width-default: 2px;
+
+        /* Sprawl */
+        /* Typography */
         /* Font and Weight */
         --heading-font-sprawl: var(--ff-nippo);
         --heading-font-weight-sprawl: 600;
@@ -89,25 +96,31 @@
         --body-font-sprawl: var(--ff-teko);
         --body-font-weight-sprawl: 400;
         --body-font-weight-light-sprawl: 300;
-
+        --link-font-weight-sprawl: 500;
+        --link-color-static-sprawl: var(--cl-display-dull);
         /* Color */
         --heading-color-sprawl: var(--cl-display-dull);
         --body-color-sprawl: var(--cl-display-dull);
-
-      /* Palette */
+        
+        /* Palette */
         /* Action Colors - Duration */
         --action-color-primary-sprawl: var(--cl-display-dull);
         --action-color-secondary-sprawl: var(--cl-lemon-lightest);
         --action-duration-primary-sprawl: 0.2s;
-
+        
         /* Static Colors */
         --background-color-primary-sprawl: var(--cl-charcoal-darkest);
         --svg-color-sprawl: var(--cl-display-dull);
         --border-color-sprawl: var(--cl-lemon-lightest);
+        
+        /* Static characteristics */
+        --border-radius-sprawl: 4px;
+        --outline-offset-sprawl: 1px;
+        --outline-width-sprawl: 1px;
 
-    /* Floral */
-
-      /* Typography */
+        /* Floral */
+        
+        /* Typography */
         /* Font and Weight */
         --heading-font-floral: var(--ff-melodrama);
         --heading-font-weight-floral: 700;
@@ -115,22 +128,27 @@
         --body-font-floral: var(--ff-manrope);
         --body-font-weight-floral: 450;
         --body-font-weight-light-floral: 350;
+        --link-font-weight-floral: 600;
+        --link-color-static-floral: var(--cl-orange-hot);
 
         /* Color */
         --heading-color-floral: var(--cl-orange-hot);
         --body-color-floral: var(--cl-text-default-dark);
 
-
       /* Palette */
         /* Action Colors - Duration */
-        --action-color-primary-floral: var(--cl-orange-hot);
+        --action-color-primary-floral: var(--cl-blue-lavender);
         --action-color-secondary-floral: var(--cl-charcoal-darkest);
         --action-duration-primary-floral: 0.7s;
-
 
         /* Static Colors */
         --background-color-primary-floral: var(--cl-chartreuse-lightest);
         --border-color-floral: var(--cl-orange-hot);
         --svg-color-floral: var(--cl-orange-hot);
 
-}
+        /* Static characteristics */
+        --border-radius-floral: 8px;
+        --outline-offset-floral: 2px;
+        --outline-width-floral: 2px;
+      }       
+        
