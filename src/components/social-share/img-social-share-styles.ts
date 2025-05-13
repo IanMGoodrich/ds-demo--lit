@@ -17,33 +17,33 @@ export const socialShareStyles = css`
   }
 
   :host([theme='floral']) {
-  --svg-color: var(--svg-color-floral);
+  --svg-color: var(--cl-svg-floral);
   --border-radius: 8px;
   --border-width: 2px;
-  --border-color: var(--border-color-floral);
+  --border-color: var(--cl-border-floral);
   --action-color-primary: var(--action-color-primary-floral);
   --action-color-secondary: var(--action-color-secondary-floral);
-  --background-color: var(--background-color-primary-floral);
+  --background-color: var(--cl-background-primary-floral);
 }
 
 :host([theme='sprawl']) {
-  --svg-color: var(--svg-color-sprawl);
+  --svg-color: var(--cl-svg-sprawl);
   --border-width: 1px;
   --border-radius: 0px;
-  --border-color: var(--border-color-sprawl);
+  --border-color: var(--cl-border-sprawl);
   --action-color-primary: var(--action-color-secondary-sprawl);
   --action-color-secondary: var(--action-color-primary-sprawl);
-  --background-color: var(--background-color-primary-sprawl);
+  --background-color: var(--cl-background-primary-sprawl);
 }
 
 :host([theme='default']) {
-  --svg-color: var(--svg-color-default);
+  --svg-color: var(--cl-svg-default);
   --border-radius: 4px;
   --border-width: 2px;
-  --border-color: var(--border-color-default);
+  --border-color: var(--cl-border-default);
   --action-color-primary: var(--action-color-primary-default);
   --action-color-secondary: var(--action-color-secondary-default);
-  --background-color: var(--background-color-primary-default);
+  --background-color: var(--cl-background-primary-default);
 }
 
 .img-social-share--link {
