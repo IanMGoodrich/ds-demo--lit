@@ -75,9 +75,7 @@ export class ImgBasicCard extends LitElement {
     if (ctaSlot.length <= 0) {
       return;
     }
-    if (ctaSlot.length > 0) {
-      console.log(ctaSlot[0]);
-      
+    if (ctaSlot.length > 0) {      
       const linkText = ctaSlot[0].innerHTML;
       if (linkText === '') {
         this.silentLink = true;
