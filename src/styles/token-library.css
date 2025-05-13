@@ -10,6 +10,11 @@
   --ff-bespoke-serif: 'Bespoke-Serif';
   --ff-bespoke-serif-it: 'Bespoke-Serif-It';
 
+  /* Container Widths */
+  --container-max-width-default: 1400px;
+  --container-max-width-narrow: 1220px;
+  --container-max-width-full-bleed: 100vw;
+
   /* Font Sizes: Clamped to 640px - 1440px */
 
   /* 10px - 12px */
