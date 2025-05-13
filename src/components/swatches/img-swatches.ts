@@ -22,16 +22,14 @@ export class ImgSwatches extends LitElement {
   theme: Theme;
 
   firstUpdated() {
-    const colorMatch =new RegExp('^ *(--[^:\\s]*(?:cl)[^:\\s]*):\\s*([^;]+);','gm');
-    const themeColorMatch:RegExp = new RegExp(
-      `(--[^:\\s]*${this.theme}[^:\\s]*color[^:\\s]*|--[^:\\s]*color[^:\\s]*${this.theme}[^:\\s]*):\\s*([^;]+);`,
-      'gm'
-    );
-    const themeMatch = new RegExp(`(--[^:\s]*${this.theme}[^:\s]*):\s*([^;]+);`, 'gm');
-    
-    this.colorTokens = this.filterTheme(tokens, colorMatch);
-    this.themeTokens  = this.filterTheme(tokens, themeMatch);
-    this.themeColorTokens  = this.filterTheme(tokens, themeColorMatch);
+    this.setTokens();
+  }
+  
+  shouldUpdate(changedProperties: Map<string, any>) {
+    if (changedProperties.has('theme')) {
+      this.setTokens();
+    }
+    return changedProperties.has('theme');
   }
 
   render() {
@@ -43,12 +41,20 @@ export class ImgSwatches extends LitElement {
               Heading Text
             </h3>
             <p class="img-swatch--body">Vivamus lacinia lacus vel neque egestas, vitae volutpat purus dapibus. Nullam nec ultricies erat. Etiam ac urna metus. Sed cursus libero id ullamcorper interdum. Donec non urna et erat vehicula porttitor. Vivamus a sagittis dolor. Nulla facilisi. Cras euismod orci at felis cursus, vel vulputate sapien suscipit.</p>
-            <div class="img-swatch--links-wrapper">
-              <a class="img-swatch--link" href="#">Link example</a>
-              <a class="img-swatch--link-hover" href="#">Link hover example</a>
-              <a class="img-swatch--link-focus" href="#">Link focus example</a>
-              <a class="default-link" href="#">Link Class example</a>
-              <slot name="link-cta-default"></slot>
+            </div>
+            <div class="img-swatch--ctas-wrapper">
+              <div class="img-swatch--links-wrapper">
+                <a class="${this.theme} primary-link" href="#">Primary link class</a>
+                <a class="${this.theme} secondary-link" href="#">Secondary link class</a>
+                <slot name="link-cta-primary"></slot>
+                <slot name="link-cta-secondary"></slot>
+              </div>
+              <div class="img-swatch--buttons-wrapper">
+                <button class="${this.theme} primary-button">Primary button class</button>
+                <button class="${this.theme} secondary-button">Secondary button class</button>
+                <slot name="button-cta-primary"></slot>
+                <slot name="button-cta-secondary"></slot>
+              </div>
             </div>
           </div>
           <div class="img-swatch--colors-wrapper">
@@ -68,6 +74,16 @@ export class ImgSwatches extends LitElement {
         </div>
       </section>
     `;
+  }
+
+  setTokens() {
+    const colorMatch = new RegExp('^ *(--[^:\\s]*(?:cl)[^:\\s]*):\\s*([^;]+);','gm');
+    const themeColorMatch = new RegExp(`(--cl-[a-zA-Z0-9-]+-${this.theme}):\\s*([^;]+);`, 'g');
+    const themeMatch = new RegExp(`(--[^:\s]*${this.theme}[^:\s]*):\s*([^;]+);`, 'gm');
+    
+    this.colorTokens = this.filterTheme(tokens, colorMatch);
+    this.themeTokens  = this.filterTheme(tokens, themeMatch);
+    this.themeColorTokens  = this.filterTheme(tokens, themeColorMatch);
   }
   
   generateSwatches(cssVar: CssVarVal) {

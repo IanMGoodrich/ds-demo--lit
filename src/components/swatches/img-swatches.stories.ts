@@ -24,6 +24,7 @@ export default {
 // @ts-expect-error because ts
 export const Default = ({theme}) => html`
 <img-swatches theme=${theme}>
-  <a href="#" slot='link-cta-default'>Link-Cta-Default Example</a>
+  <a href="#" slot='link-cta-primary'>link-cta-primary Example</a>
+  <a href="#" slot='link-cta-secondary'>link-cta-secondary Example</a>
 </img-swatches>
 `;
