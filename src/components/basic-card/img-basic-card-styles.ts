@@ -14,13 +14,11 @@ export const cardStyles = css`
   --description-color: var(--body-color-flora);
   --description-weight: var(--body-font-weight-floral);
   --cta-weight: var(--heading-font-weight-light-floral);
-  --background-color: var(--background-color-primary-floral);
+  --background-color: var(--cl-background-primary-floral);
   --border-radius: 8px;
   --border-width: 2px;
-  --border-color: var(--border-color-floral);
+  --border-color: var(--cl-border-floral);
   --duration-time: var(--action-duration-primary-floral);
-  --action-color-primary: var(--action-color-primary-floral);
-  --action-color-secondary: var(--action-color-secondary-floral);
 }
 
 :host([theme='sprawl']) {
@@ -37,19 +35,17 @@ export const cardStyles = css`
   --description-color: var(--body-color-sprawl);
   --description-weight: var(--body-font-weight-sprawl);
   --cta-weight: var(--heading-font-weight-light-sprawl);
-  --background-color: var(--background-color-primary-sprawl);
-  --border-color: var(--border-color-sprawl);
+  --background-color: var(--cl-background-primary-sprawl);
+  --border-color: var(--cl-border-sprawl);
   --border-width: 1px;
   --border-radius: 0px;
   --duration-time: var(--action-duration-primary-sprawl);
-  --action-color-primary: var(--action-color-secondary-sprawl);
-  --action-color-secondary: var(--action-color-primary-sprawl);
 }
 
 :host([theme='default']) {
   --eyebrow-size: var(--fs-eyebrow);
   --eyebrow-font: var(--heading-font-default);
-  --eyebrow-color: var(--heading-font-default);
+  --eyebrow-color: var(--body-color-default);
   --eyebrow-weight: var(--body-font-weight-light-default);
   --heading-color: var(--heading-color-default);
   --heading-size: var(--fs-heading-3);
@@ -60,13 +56,11 @@ export const cardStyles = css`
   --description-color: var(--body-color-default);
   --description-weight: var(--body-font-weight-default);
   --cta-weight: var(--heading-font-weight-light-default);
-  --background-color: var(--background-color-primary-default);
+  --background-color: var(--cl-background-primary-default);
   --border-radius: 4px;
   --border-width: 2px;
-  --border-color: var(--border-color-default);
+  --border-color: var(--cl-border-default);
   --duration-time: var(--action-duration-primary-default);
-  --action-color-primary: var(--action-color-primary-default);
-  --action-color-secondary: var(--action-color-secondary-default);
 }
 
 :host {
@@ -77,16 +71,20 @@ export const cardStyles = css`
 }
 
 :host([silent-link]) {
+  .img-basic-card {
+    cursor: pointer;
+  }
+
   .cta-wrapper {
     height: 0px;
     width: 0px;
   }
+
   slot[name='link-cta-default']::slotted(a) {
     height: 0px;
     width: 0px;
   }
 }
-
 
 .img-basic-card {
   display: flex;
@@ -105,12 +103,16 @@ export const cardStyles = css`
 }
 
 .cta-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  row-gap: 0.5rem;
   margin-top: auto;
 }
 
 slot[name='eyebrow']::slotted(*) {
   font-size: var(--eyebrow-size);
-  color: var(--heading-color);
+  color: var(--eyebrow-color);
   font-family: var(--description-font);
   text-transform: uppercase;
   font-weight: var(--eyebrow-weight);
@@ -140,9 +142,8 @@ slot[name='image']::slotted(picture) {
   width: 100%;
   height: auto;
 }
-
-
-slot[name='link-cta-default']::slotted(a)::before {
+  
+slot[name^='link-cta']::slotted(a)::before {
   display: flex;
   content: '';
   position: absolute;
@@ -150,11 +151,11 @@ slot[name='link-cta-default']::slotted(a)::before {
   z-index: 1;
 }
 
-slot[name='link-cta-default']::slotted(a:focus) {
+slot[name^='link-cta']::slotted(a:focus) {
   outline: none;
 }
 
-slot[name='link-cta-default']::slotted(a:focus)::before {
+slot[name^='link-cta']::slotted(a:focus)::before {
   outline: solid 2px var(--border-color);
   outline-offset: 4px;
 }

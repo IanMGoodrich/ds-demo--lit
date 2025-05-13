@@ -20,8 +20,7 @@ export class ImgBasicCard extends LitElement {
   /**
    * Ref to cta slot
    */
-  @queryAssignedElements({slot: 'link-cta-default', flatten: true})
-  ctaRef: Array<HTMLElement>;
+  ctaRef: NodeListOf<Element>;
 
   /**
    * Ref to heading slot
@@ -38,7 +37,7 @@ export class ImgBasicCard extends LitElement {
   @property({type: Boolean, reflect: true, attribute: 'silent-link'})
   silentLink: boolean;
 
-  firstUpdated() {
+  firstUpdated() {    
     this.handleSilentCTA()
   }
 
@@ -61,7 +60,10 @@ export class ImgBasicCard extends LitElement {
             <slot name="description"></slot>
           </div>
           <div class="cta-wrapper">
-            <slot name="link-cta-default"></slot>
+            <slot name="link-cta-primary"></slot>
+            <slot name="link-cta-secondary"></slot>
+            <slot name="button-cta-primary"></slot>
+            <slot name="button-cta-secondary"></slot>
           </div>
         </div>
       </section>
@@ -69,15 +71,18 @@ export class ImgBasicCard extends LitElement {
   }
 
   handleSilentCTA() {        
-    if (this.ctaRef.length <= 0) {
+    const ctaSlot= this.querySelectorAll('[slot^=link-cta]');
+    if (ctaSlot.length <= 0) {
       return;
     }
-    if (this.ctaRef.length > 0) {
-      const linkText = this.ctaRef[0].innerHTML;
+    if (ctaSlot.length > 0) {
+      console.log(ctaSlot[0]);
+      
+      const linkText = ctaSlot[0].innerHTML;
       if (linkText === '') {
         this.silentLink = true;
         const titleText = this.headingRef[0].innerHTML;
-        this.ctaRef[0].setAttribute('aria-label', titleText);
+        ctaSlot[0].setAttribute('aria-label', titleText);
       }      
     }
   }
