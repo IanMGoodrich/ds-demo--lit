@@ -63,9 +63,9 @@ export const footerStyles = css`
   --link-size-main: var(--fs-heading-6);
   --action-color-secondary: var(--action-color-secondary-default);
   --action-color-primary: var(--action-color-primary-default);
-  --background-color: var(--background-color-primary-default);
+  --background-color: var(--cl-background-primary-default);
   --body-color: var(--body-color-default);
-  --border-color: var(--border-color-default);
+  --border-color: var(--cl-border-default);
 }
 
 :host([theme='floral']) {
@@ -73,9 +73,9 @@ export const footerStyles = css`
   --link-font-main: var(--heading-font-floral);
   --action-color-secondary: var(--action-color-secondary-floral);
   --action-color-primary: var(--action-color-primary-floral);
-  --background-color: var(--background-color-primary-floral);
+  --background-color: var(--cl-background-primary-floral);
   --body-color: var(--body-color-floral);
-  --border-color: var(--border-color-floral);
+  --border-color: var(--cl-border-floral);
 }
 
 :host([theme='sprawl']) {
@@ -83,8 +83,8 @@ export const footerStyles = css`
   --link-size-main: var(--fs-heading-6);
   --action-color-secondary: var(--action-color-secondary-sprawl);
   --action-color-primary: var(--action-color-primary-sprawl);
-  --background-color: var(--background-color-primary-sprawl);
+  --background-color: var(--cl-background-primary-sprawl);
   --body-color: var(--body-color-sprawl);
-  --border-color: var(--border-color-sprawl);
+  --border-color: var(--cl-border-sprawl);
 }
 `
