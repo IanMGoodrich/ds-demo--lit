@@ -119,7 +119,7 @@ export const buttonStyles = css`
     slot[name^='button-cta-primary'] {
       --button-padding: var(--spacing-50-100);
       --button-font-size: var(--fs-body);
-      --button-font-family: var(--ff-body-default);
+      --button-font-family: var(--body-font-default);
       --button-font-weight: var(--link-font-weight-default);
       --button-bg-color: var(--cl-bold-primary-default);
       --button-color: var(--cl-accent-tertiary-default);
@@ -144,7 +144,7 @@ export const buttonStyles = css`
     slot[name^='button-cta-secondary'] {
       --button-padding: var(--spacing-50-100);
       --button-font-size: var(--fs-body);
-      --button-font-family: var(--ff-body-default);
+      --button-font-family: var(--body-font-default);
       --button-font-weight: var(--link-font-weight-default);
       --button-bg-color: var(--cl-accent-tertiary-default);
       --button-color: var(--cl-bold-primary-default);
@@ -169,6 +169,7 @@ export const buttonStyles = css`
   button,
   ::slotted(button) {
     display: flex;
+    width: fit-content;
     padding: var(--button-padding);
     background-color: var(--button-bg-color);
     color: var(--button-color);
@@ -177,7 +178,7 @@ export const buttonStyles = css`
     font-family: var(--button-font-family);
     font-weight: var(--button-font-weight);
     font-size: var(--button-font-size);
-    line-height:  1;
+    line-height: 1;
   }
   
   button:focus-visible,
