@@ -19,6 +19,23 @@ export const linkStyles = css`
       --link-color: var(--cl-bold-tertiary-floral);
     }
   }
+  .secondary-link,
+  slot[name^='link-cta-secondary'] {
+    --link-font-size: var(--fs-body);
+    --link-font-family: var(--body-font-floral);
+    --link-font-weight: var(--link-font-weight-floral);
+    --link-color: var(--cl-bold-tertiary-floral);
+    --link-underline-color: var(--cl-bold-primary-floral); 
+    --link-color-active: var(--cl-bold-primary-floral);
+    --link-outline-color: var(--cl-bold-primary-floral);
+    --link-outline-width: 2px;
+    --link-outline-offset: 2px;
+    --duration-time: var(--action-duration-primary-floral);
+    
+    &:hover {
+      --link-color: var(--cl-bold-primary-floral);
+    }
+  }
 }
 
 .default,
@@ -38,6 +55,23 @@ export const linkStyles = css`
     
     &:hover {
       --link-color: var(--cl-bold-tertiary-default);
+    }
+  }
+  .secondary-link,
+  slot[name^='link-cta-secondary'] {
+    --link-font-size: var(--fs-body);
+    --link-font-family: var(--body-font-default);
+    --link-font-weight: var(--link-font-weight-default);
+    --link-color: var(--body-color-default);
+    --link-underline-color: var(--cl-bold-primary-default); 
+    --link-color-active: var(--cl-bold-primary-default);
+    --link-outline-color: var(--cl-bold-primary-default);
+    --link-outline-width: 2px;
+    --link-outline-offset: 2px;
+    --duration-time: var(--action-duration-primary-default);
+    
+    &:hover {
+      --link-color: var(--cl-bold-primary-default);
     }
   }
 }
