@@ -61,30 +61,33 @@ export const footerStyles = css`
 :host([theme='default']) {
   --link-font-main: var(--heading-font-default);
   --link-size-main: var(--fs-heading-6);
-  --action-color-secondary: var(--action-color-secondary-default);
-  --action-color-primary: var(--action-color-primary-default);
+  --action-color-secondary: var(--cl-bold-tertiary-default);
+  --action-color-primary: var(--cl-bold-secondary-default);
   --background-color: var(--cl-background-primary-default);
   --body-color: var(--body-color-default);
   --border-color: var(--cl-border-default);
+  --action-duration: var(--action-duration-primary-default);
 }
 
 :host([theme='floral']) {
   --link-size-main: var(--fs-heading-6);
   --link-font-main: var(--heading-font-floral);
-  --action-color-secondary: var(--action-color-secondary-floral);
-  --action-color-primary: var(--action-color-primary-floral);
+  --action-color-secondary: var(--cl-bold-secondary-floral);
+  --action-color-primary: var(--cl-bold-primary-floral);
   --background-color: var(--cl-background-primary-floral);
   --body-color: var(--body-color-floral);
   --border-color: var(--cl-border-floral);
+  --action-duration: var(--action-duration-primary-floral);
 }
 
 :host([theme='sprawl']) {
   --link-font-main: var(--heading-font-sprawl);
   --link-size-main: var(--fs-heading-6);
-  --action-color-secondary: var(--action-color-secondary-sprawl);
-  --action-color-primary: var(--action-color-primary-sprawl);
+  --action-color-secondary: var(--cl-light-secondary-sprawl);
+  --action-color-primary: var(--cl-bold-primary-sprawl);
   --background-color: var(--cl-background-primary-sprawl);
   --body-color: var(--body-color-sprawl);
   --border-color: var(--cl-border-sprawl);
+  --action-duration: var(--action-duration-primary-sprawl);
 }
 `

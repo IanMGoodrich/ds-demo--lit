@@ -22,7 +22,7 @@ img-footer {
           font-size: var(--link-size-main);
           border-bottom: solid var(--border-color) 2px;
           margin-bottom: .5rem;
-
+          cursor: pointer;
           &:hover {
             border-color: var(--action-color-primary);
             color: var(--action-color-secondary);
@@ -38,10 +38,29 @@ img-footer {
           gap: .5rem;
 
           li a {
+            display: flex;
+            flex-direction: column;
             font-size: 12px;
             margin-bottom: 0;
             border-bottom: none;
           }
+
+          li a:after {
+            content: '';
+            height: 2px;
+            width: 0px;
+            background-color: var(--action-color-primary);
+            transition: var(--action-duration);
+
+            &:hover {
+              width: 100%;
+            }
+          }
+          
+          li a:hover:after {
+            width: 100%;
+          
+          } 
         }
       }
     }
